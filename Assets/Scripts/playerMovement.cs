@@ -25,7 +25,7 @@ public class playerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("Speed: " + speed);
+        //Debug.Log("Speed: " + speed);
         //rb.velocity = vel;
         Acceleration();
         //accelerationFunction();
