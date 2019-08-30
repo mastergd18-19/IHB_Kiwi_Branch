@@ -26,15 +26,20 @@ public class playerAnimation : MonoBehaviour
         {
             Debug.Log("TEST center = " + pm.center);
 
-            if (pm.center)
+            if (Anim.GetBool("Center"))
             {
-                Debug.Log("TEST COUNT = " + pm.right);
-                Anim.SetBool("Right", pm.right);
-                Anim.SetBool("Center", pm.center);
+                Anim.Play("p_Right");
+                //Anim.SetBool("Right", true);
+                //Anim.SetBool("Center", false);
+                Debug.Log("TEST1 Left = " + Anim.GetBool("Left"));
+                Debug.Log("TEST1 Center = " + Anim.GetBool("Center"));
+                Debug.Log("TEST1 Right = " + Anim.GetBool("Right"));
+
+
             }
             else if (pm.left)
             {
-                Anim.SetBool("Right", pm.right);
+                Anim.SetBool("Left", false);
                 Anim.SetBool("Center", pm.center);
             }
             
@@ -42,15 +47,18 @@ public class playerAnimation : MonoBehaviour
 
         if (pm.leftMovement)
         {
-            if (pm.center)
+            if (Anim.GetBool("Center"))
             {
-                Anim.SetBool("Center", pm.center);
-                Anim.SetBool("Left", pm.left);
+                Anim.SetBool("Center", false);
+                Anim.SetBool("Left", true);
             }
-            else if(pm.right)
+            else if(Anim.GetBool("Right"))
             {
-                Anim.SetBool("Center", pm.center);
-                Anim.SetBool("Left", pm.left);
+                Anim.SetBool("Center",true);
+                Anim.SetBool("Right", false);
+                Debug.Log("TEST2 Left = " + Anim.GetBool("Left"));
+                Debug.Log("TEST2 Center = " + Anim.GetBool("Center"));
+                Debug.Log("TEST2 Right = " + Anim.GetBool("Right"));
             }
 
         }
